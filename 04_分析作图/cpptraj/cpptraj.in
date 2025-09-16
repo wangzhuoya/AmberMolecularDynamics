@@ -7,8 +7,8 @@
 # 1. 文件导入
 # ---------------------------------------------
 # 导入拓扑文件
-parm /home/xxx/MD_20250330/PLpro/3d_pdbqt/7mc9_single/7mc9_ions.prmtop
-trajin /home/xxx/MD_20250330/PLpro/3d_pdbqt/7mc9_single/7mc9_ions_md.nc
+parm /home/xxx/7mc9_ions.prmtop
+trajin /home/xxx/7mc9_ions_md.nc
 
 
 # 2. 系统信息
