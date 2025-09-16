@@ -9,7 +9,7 @@
 蛋白的预处理比较简单，只需要将从RCSB PDB数据库中获取的蛋白部分进行质子化即可，在剔除非蛋白部分的原子后，使用AmberTools中的pdb4amber完成蛋白质的加氢。
 ```bash
 conda activate AmberTools21
-pdb4amber -i 4TPW-pro.pdb -o rec.pdb -y --reduce
+pdb4amber -i test.pdb -o rec.pdb -y --reduce
 ```
 - 输入：4TPW-pro.pdb
 - 输出：**rec.pdb**
@@ -17,7 +17,7 @@ pdb4amber -i 4TPW-pro.pdb -o rec.pdb -y --reduce
 ### 2.2 处理小分子
 对接后的小分子生成amber参数文件
 ```bash
-conda activate AmberTools21
+# conda activate AmberTools21
 acpype -i test.mol2 -a gaff2 -c bcc -n 0
 ```
 -i：输入文件，建议为mol2格式，其他格式将通过openbabel转换；
@@ -53,7 +53,7 @@ nohup bash amber_run.sh >md.log 2>&1 &
 蛋白的预处理比较简单，只需要将从RCSB PDB数据库中获取的蛋白部分进行质子化即可，在剔除非蛋白部分的原子后，可以使用AmberTools中的pdb4amber完成蛋白质的加氢。具体的加氢程序是由杜克大学的Richardson实验室开发的Reduce程序完成。
 ```bash
 conda activate AmberTools21
-pdb4amber -i 4TPW-pro.pdb -o rec.pdb -y --reduce
+pdb4amber -i test.pdb -o rec.pdb -y --reduce
 ```
 - 输入：4TPW-pro.pdb
 - 输出：rec.pdb
@@ -65,14 +65,14 @@ pdb4amber -i 4TPW-pro.pdb -o rec.pdb -y --reduce
 tleap -f  tleap.leaprc
 ```
 - 输入：tleap.leaprc
-- 输出：4TPW_ions.inpcrd 和 4TPW_ions.prmtop
+- 输出：rec_ions.inpcrd 和 rec_ions.prmtop
 
 
 ### 3.3. 模拟
 ```bash
 nohup bash amber_run.sh >md.log 2>&1 &
 ```
-- 输入：amber_run.sh、4TPW_ions.inpcrd 、4TPW_ions.prmtop、eq.in、heat.in、md.in、min1.in、min2.in、mmpbsa.in、press.in
+- 输入：amber_run.sh、rec_ions.inpcrd 、rec_ions.prmtop、eq.in、heat.in、md.in、min1.in、min2.in、mmpbsa.in、press.in
 
 
 
