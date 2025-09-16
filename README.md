@@ -3,7 +3,8 @@
 
 ## 1. 安装Amber/AmberTools/Acpype
 
-## 2. 蛋白模拟
+## 2. “小分子-蛋白”复合体模拟
+
 ### 2.1. 处理蛋白结构
 蛋白的预处理比较简单，只需要将从RCSB PDB数据库中获取的蛋白部分进行质子化即可，在剔除非蛋白部分的原子后，使用AmberTools中的pdb4amber完成蛋白质的加氢。
 ```bash
@@ -47,7 +48,7 @@ nohup bash amber_run.sh >md.log 2>&1 &
 - 输入：amber_run.sh、complex_ions.inpcrd 、complex_ions.prmtop、eq.in、heat.in、md.in、min1.in、min2.in、mmpbsa.in、press.in
 
 
-## 3. 蛋白-小分子模拟
+## 3. 蛋白模拟
 ### 3.1. 处理蛋白结构
 蛋白的预处理比较简单，只需要将从RCSB PDB数据库中获取的蛋白部分进行质子化即可，在剔除非蛋白部分的原子后，可以使用AmberTools中的pdb4amber完成蛋白质的加氢。具体的加氢程序是由杜克大学的Richardson实验室开发的Reduce程序完成。
 ```bash
