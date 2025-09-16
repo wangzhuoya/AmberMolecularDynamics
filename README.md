@@ -107,7 +107,7 @@ nohup bash amber_run.sh > md.log 2>&1 &
 
 ```bash
 # 示例：运行 cpptraj 分析
-cpptraj -p complex_ions.prmtop -i analysis.in
+cpptraj -p complex_ions.prmtop -i cpptraj.in
 ```
 
 
