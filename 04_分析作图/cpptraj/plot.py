@@ -131,22 +131,22 @@ def main():
     # 读取SASA数据
     time1, sasa1 = read_data(f'{base_path1}/sasa_ns.dat')
     time2, sasa2 = read_data(f'{base_path2}/sasa_ns.dat')
-    plot_comparison(time1, sasa1, time2, sasa2, 'SASA_7mc9_SH144.png', 'SASA (Å²)', ylim=(8000, 16000))
+    plot_comparison(time1, sasa1, time2, sasa2, 'SASA.png', 'SASA (Å²)', ylim=(8000, 16000))
     
     # 读取RMSD数据
     time1, rmsd1 = read_data(f'{base_path1}/rmsd_ns.dat')
     time2, rmsd2 = read_data(f'{base_path2}/rmsd_ns.dat')
-    plot_comparison(time1, rmsd1, time2, rmsd2, 'RMSD_7mc9_SH144.png', 'RMSD (Å)')
+    plot_comparison(time1, rmsd1, time2, rmsd2, 'RMSD.png', 'RMSD (Å)')
     
     # 读取RoG数据
     time1, rog1 = read_data(f'{base_path1}/RoG_ns.dat')
     time2, rog2 = read_data(f'{base_path2}/RoG_ns.dat')
-    plot_comparison(time1, rog1, time2, rog2, 'RoG_7mc9_SH144.png', 'Radius of Gyration (Å)', ylim=(17, 21))
+    plot_comparison(time1, rog1, time2, rog2, 'RoG.png', 'Radius of Gyration (Å)', ylim=(17, 21))
     
     # 读取RMSF数据
     residues1, rmsf1 = read_rmsf(f'{base_path1}/rmsf.dat')
     residues2, rmsf2 = read_rmsf(f'{base_path2}/rmsf.dat')
-    plot_rmsf_comparison(residues1, rmsf1, residues2, rmsf2, 'RMSF_7mc9_SH144.png')
+    plot_rmsf_comparison(residues1, rmsf1, residues2, rmsf2, 'RMSF.png')
 
 if __name__ == "__main__":
     main()
