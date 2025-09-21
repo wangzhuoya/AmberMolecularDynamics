@@ -53,3 +53,10 @@ pmemd.cuda -O -i eq.in -o rec_ions_eq.out -p rec_ions.prmtop -c rec_ions_press.r
 # 第6步：成品模拟 (Production MD，时长 100ns)
 # -i md.in: 指定生产模拟的输入参数。
 pmemd.cuda -O -i md.in -o rec_ions_md.out -p rec_ions.prmtop -c rec_ions_eq.rst -r rec_ions_md.rst -x rec_ions_md.nc
+
+
+# 第6步：续跑成品模拟 (增加时长 100ns)
+# 需要用到上一步： complex_ions_md.rst；
+# 需要提供新的模拟参数文件 md_100ns.in；
+# complex_ions.prmtop文件是最初的拓扑文件
+# pmemd.cuda -O -i md_100ns.in -o complex_ions_md_100ns.out -p complex_ions.prmtop -c complex_ions_md.rst -r complex_ions_md_100ns.rst -inf complex_ions_md_100ns.mdinfo -x complex_ions_md_100ns.nc
